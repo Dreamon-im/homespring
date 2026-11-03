@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dreamon",
+  "description": "Claude Code plugins from Dreamon",
+  "owner": {
+    "name": "Dreamon"
+  },
+  "renames": {
+    "homespring": "iphone-home-screen"
+  },
+  "plugins": [
+    {
+      "name": "iphone-home-screen",
+      "displayName": "iPhone Home Screen",
+      "source": "./",
+      "description": "Organize an iPhone home screen over USB or Wi-Fi: move apps, create and tidy folders, find offloaded apps, preview changes, back up and restore. macOS 13+, includes a prebuilt iconctl binary.",
+      "category": "productivity",
+      "keywords": ["iphone", "ios", "home-screen", "macos"],
+      "skills": ["./skill"]
+    }
+  ]
+}
