@@ -2,10 +2,10 @@
 
 ## Unreleased
 
-- Renamed from Homespring to `iphone-home-screen` (skill, plugin and GitHub repo). Plugin installs of `homespring` move over automatically; backups stay in `~/Library/Application Support/homespring/`
+- Renamed from Homespring to `iphone-home-screen` (skill and GitHub repo). Backups stay in `~/Library/Application Support/homespring/`
+- Installed with `npx skills add Dreamon-im/iphone-home-screen` only; Claude Code and Codex plugin installs moved to the `Dreamon-im/ai-agent-plugin` marketplace
 - Smart Stacks are read as widgets. Previously they looked like empty folders and every plan on their page was refused with "Folder  is empty."
 - Moving an app into or out of a folder only changes the pages it touches. Previously the whole folder was repacked into full pages of 9, shifting many unrelated apps
-- The repo is now a Claude Code plugin marketplace (`dreamon`): install with `/plugin install iphone-home-screen --marketplace Dreamon-im/iphone-home-screen`
 - The skill now ships a prebuilt `skill/bin/iconctl`, so installing the skill needs no build step
 - `iconctl` release builds are universal (Apple silicon + Intel), run on macOS 13 or later, and no longer need Homebrew at run time: libimobiledevice and its dependencies are built from pinned sources and linked statically
 - Wi-Fi support: when USB isn't plugged in, every device command connects to the iPhone over Wi-Fi automatically; `iconctl device` output gains a `connection` field

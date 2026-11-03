@@ -25,12 +25,12 @@
   - [ ] Not yet tested on an Intel Mac or on macOS older than 27
 - [x] Ship the binary: `skill/bin/` is no longer gitignored and `skill/bin/iconctl` (15 MB, universal, ad-hoc signed) is committed. SKILL.md tells the agent to ask for a reinstall if it is missing instead of building. Rule: rebuild and commit the binary together with any `iconctl/` change.
   - [ ] Developer ID signing and notarization, if the binary is ever downloaded outside git (browser downloads are quarantined by Gatekeeper)
-- [x] Claude Code marketplace: `.claude-plugin/marketplace.json` makes the repo the `dreamon` marketplace with one plugin, `iphone-home-screen` (source `./`, skill `./skill`). `claude plugin validate .` passes.
-  - [ ] Install it from the marketplace on a Mac and run the skill end to end (first remove the `install.sh` symlinks, or the skill loads twice)
+- [x] Install with `npx skills add` only. The `.claude-plugin/marketplace.json` marketplace was added and then removed on 2026-11-03; the README documents only npx (plus `scripts/install.sh` for development).
+- [x] 2026-11-04 listed as its own plugin in `Dreamon-im/ai-agent-plugin` (Claude Code and Codex marketplaces). Installs from GitHub tested with npx, Claude Code and Codex; `bin/iconctl` stays executable in all three. After changing `skill/` here, rsync it into `plugins/iphone-home-screen/skills/iphone-home-screen/` there and bump both `plugin.json` versions.
 - [x] Folder edits no longer repack the whole folder: removing an app only changes its own page (dropped if empty), and inserting only carries over into following pages while a page is full. Two new tests; 14 pass.
   - 2026-11-03 on the phone over USB: Carro moved from "To Hide 1" (folder page 4) to the end of SGLife. Plan: 1 requested move, 1 incidental (Cathay Pacific, one spot left on the same page), 0 removed; before the fix it was 70 incidental. `verified: true`. Backup: `2026-11-03T13-59-05Z.plist`.
 - [x] Merged `fix/smart-stack-widgets`: entries with `elements` (Smart Stacks) decode as widgets named "Smart Stack". 15 tests pass. 2026-11-03 rebuilt binary checked over Wi-Fi on both slices (`device`, `dump`, no-op `plan`); this phone has no Smart Stacks, so the fix itself is covered only by its unit test.
-- [x] Renamed to `iphone-home-screen`: GitHub repo `Dreamon-im/iphone-home-screen` (old URL redirects), skill and plugin name, `install.sh`. Marketplace `renames` maps `homespring` to the new name. The backup folder keeps the old name so existing backups still restore. History squashed to one commit before the rename (local backup tag `backup/pre-squash-2026-11-03`).
+- [x] Renamed to `iphone-home-screen`: GitHub repo `Dreamon-im/iphone-home-screen` (old URL redirects), skill name, `install.sh`. The backup folder keeps the old name so existing backups still restore. History squashed to one commit before the rename (local backup tag `backup/pre-squash-2026-11-03`).
 - [ ] Move the test fixtures into the repo (they read `/tmp` and the uv cache today), trimmed and with fake app names
 
 ## Backlog
